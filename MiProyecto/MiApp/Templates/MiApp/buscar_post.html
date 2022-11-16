@@ -1,0 +1,32 @@
+{% extends 'MiApp/index.html' %} {% load static %} {% block codigoDinamico %}
+
+<div>
+  <form action="buscar/" method="GET">
+    <input type="text" name="titulo" id="titulo" />
+
+    <input type="submit" value="Buscar" />
+  </form>
+</div>
+
+<div>
+  <h2 class="fw-bolder">Resultado de tu busqueda</h2>
+
+  <div>
+    {% if post %}
+
+    <ul>
+      {% for i in post %}
+      <li>Titulo: {{ i.titulo }}</li>
+      <li>Fecha: {{ i.fecha }}</li>
+      <li><p>Texto: {{ i.texto }}</p></li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+    <h3>No hay datos</h3>
+    {% endif %}
+  </div>
+  <button onclick="location.href='{% url 'Home' %}'">Volver</button>
+</div>
+
+{% endblock %}

@@ -2,10 +2,12 @@ from django.db import models
 from datetime import date
 # Create your models here.
 
-class Familia (models.Model):
+class Contacto(models.Model):
+    nombre = models.CharField(max_length=100)
+    email = models.EmailField()
+    consulta = models.CharField(max_length=450)
 
-  nombre = models.CharField(max_length=40)
-  apellido = models.CharField(max_length=40)
-  parentesco = models.CharField(max_length=40)
-  edad = models.IntegerField()
-  nacimiento = models.DateField()
+class Post(models.Model):
+    titulo = models.CharField(max_length=90)
+    fecha = models.DateField()
+    texto = models.CharField(max_length=450)

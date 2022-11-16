@@ -1,0 +1,15 @@
+{% extends 'MiApp/index.html' %} {% load static %} {% block codigoDinamico %}
+
+<form action="" method="post">
+  {% csrf_token %}
+
+  <h3>Crear tu Post</h3>
+
+  <table>
+    {{formulario.as_table}}
+  </table>
+
+  <button type="submit" value="Enviar">Enviar</button>
+</form>
+
+{% endblock %}

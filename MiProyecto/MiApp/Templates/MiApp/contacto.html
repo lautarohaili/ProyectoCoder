@@ -1,0 +1,59 @@
+{% extends 'MiApp/index.html' %} {% load static %} {% block codigoDinamico %}
+
+<form action="" method="post">
+  {% csrf_token %}
+
+  <div class="container">
+    <div class="row my-4 py-4">
+      <div class="text-center">
+        <h1>¡Envianos tu consulta!</h1>
+      </div>
+    </div>
+    <section class="row col-12 my-4 py-4">
+      <div class="col-12 col-lg-6">
+        <div>
+          <label for="exampleFormControlInput1" class="form-label"
+            >Nombre y apellido</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="Nombre Apellido"
+          />
+        </div>
+
+        <div>
+          <label for="exampleFormControlInput1" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="name@example.com"
+          />
+        </div>
+
+        <div>
+          <textarea
+            id="mi-texto"
+            rows="10"
+            placeholder="Ingresa tu consulta acá!"
+          ></textarea>
+          <p id="resultado"></p>
+          <p id="mensaje"></p>
+          <button
+            class="justify-content-end btn btn-primary mt-4"
+            type="submit"
+            value="Enviar"
+          >
+            Enviar
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</form>
+
+{% endblock %}
