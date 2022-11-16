@@ -1,0 +1,10 @@
+{% extends 'MiApp/index.html' %} {% load static %} {% block codigoDinamico %}
+{%for post in posts %}
+
+<p>Titulo: {{post.titulo}}</p>
+
+<p>Fecha: {{post.nombre}}</p>
+
+<p>Texto: {{post.texto}}</p>
+
+{% endfor %} {% endblock %}

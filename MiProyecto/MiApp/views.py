@@ -51,10 +51,19 @@ def buscar_post(request):
 
     if request.GET.get('titulo', False): # -> 12345
         titulo = request.GET['titulo']
-        post = Post.objects.filter(titulo__icontains=titulo)
+        posts = Post.objects.filter(titulo__icontains=titulo)
 
-        return render(request, 'buscar_post.html', {'post': post, 'titulo': titulo})
+        return render(request, 'MiApp/home.html', {'posts': posts, 'titulo': titulo})
     else:
         respuesta = 'No existe el post solicitado'
-    return render(request, 'buscar_post.html', {'respuesta': respuesta})
+    return render(request, 'MiApp/buscar_post.html', {'respuesta': respuesta})
+
+
+def mostrar_post (request):
+
+    posts = Post.objects.all()
+
+    context = {'posts': posts}
+
+    return render(request, 'MiApp/mostrar_post.html', context=context)
 
